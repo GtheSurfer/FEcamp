@@ -1,0 +1,23 @@
+p{background: blue}
+#container{
+	/*아이디를 선택할 경우, 앞에 샵을 붙여야 한다.*/
+	max-width: 960px;
+}
+
+
+.container{
+	/*클래스를 선택할 경우, 앞에 점을 붙인다.*/
+	max-width: 500px;
+	background: grey;
+	margin: 0 auto 0 0;
+	/*마진의 속성은 12시부터 시계방향으로 돌아가면서 적용된다.*/
+	/*0 auto 둘만 적어도, 0 auto 0 auto의 효과가 난다.*/
+	/*우측정렬하고 싶다면, 0 0 0 auto라고 적으면 된다.*/
+	list-style: ;
+}
+
+
+.header>h1{
+	/*헤더 밑에 있는 h1을 선택한 경우이다*/
+
+}

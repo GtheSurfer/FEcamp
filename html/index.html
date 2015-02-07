@@ -2,13 +2,116 @@
 <html lang="ko">
 <head>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=2" />
-	<title> HTML5</title>
+	<meta name="viewport" content="width=device-width" />
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=2, minimum-scale=1, maximum-scale=2, user-scalable=no" /> -->
+	<!-- minimum-scale의 기본값은 0.5 -->
+	<!-- maximum-scale의 기본값은 2 -->
+	<title> 신문고 이용안내 - 공지사항 - 청와대</title>
+	<!-- 타이틀을 적을 때엔, 하위페이지를 앞쪽에 적어줘야, 탭이 작아져도 보인다. 시각장애인에게도 좋다. -->
+	<link rel="stylesheet" href="../css/default.css">
+	<!-- rel=relation, href=hyper-text reference -->
+	<!-- ..은 부모 디렉토리이다. -->
+
+	<style>
+		p{background:red;}
+		/*이렇게 헤드에 적는 것은 embeded로 적는다고 한다. inline과 반대 개념*/
+		/*여기서 p는 선택자(selector)라고 부름.*/
+		/*style태그는 head태그에만 작성하는 것이 원칙이다. body에 적어도 브라우저가 용인하는 경우도 있긴하다.*/
+
+	</style>
+
 </head>
 
-<bodY>
-	<p title="world wide web consortium" lang="en">W3C</p>
-	<p>Hello, World!</p>
-</bodY>
+<body>
+	<div class="container">
+	<!-- id는 한 페이지에서 한 번만 나올 수 있다. id의 값은 숫자로 시작하면 안된다. 한글은 가능 -->
+	<!-- id는 URL으로 사용할 수도 있다. 해당영역을 최상단으로 정렬하여 보여준다. -->
+	<a href="#main">skip menu</a>
+	<!-- URL대신에, 메인이라는 아이디를 적어주었다. -->
 
+		<header class="header">
+			<h1>HTML5</h1>
+			<nav class="gnb">.gnb
+				<h2>메인 메뉴</h2>
+				<ul>
+					<li><a href="#">메뉴1</a>
+						<ul>
+							<li><a href="#">메뉴 1-1</a></li>
+							<li><a href="#">메뉴 1-2</a></li>
+							<li><a href="#">메뉴 1-3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">메뉴2</a>
+						<ul>
+							<li><a href="#">메뉴 2-1</a></li>
+							<li><a href="#">메뉴 2-2</a></li>
+							<li><a href="#">메뉴 2-3</a></li>
+						</ul>	
+					</li>
+					<li><a href="#">메뉴3</a>
+						<ul>
+							<li><a href="#">메뉴 3-1</a></li>
+							<li><a href="#">메뉴 3-2</a></li>
+							<li><a href="#">메뉴 3-3</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!-- ul = unorderd list -->
+				<!-- ol = ordered list -->
+				<!-- li = list item -->
+				<!-- ul과 li사이에는 다른 어떤 태그도 끼어들면 안된다. -->
+			</nav>
+			<form class="search">
+				<input type="search" required>
+				<!-- input의 속성/값을 생략하면, 기본적으로 type="text"와 같은 효과가 난다. -->
+				<!-- requried 속성은, 폼을 작성해야만 써브밋이 가능하게한다. 공란인채로 검색버튼을 누를 수 없다는 소리. -->
+				<input type="submit" value="search">
+
+			</form>
+		</header>
+
+		<div class="body">
+		<!-- 이 디비전은 래퍼로써, 세개의 칼럼(박스)들을 하나로 묶어주는, 권장사항이다. -->
+			<main id="main">
+			<!-- URL로 사용하기 위하여 아이디를 부여하였다. -->
+			#main
+			</main>
+			<!-- 메인 엘리먼트 안에는, 다른페이지에 반복되지 않는 것이 들어가야 한다. -->
+			<!-- 한페이지에서 한번만 사용할 수 있다. -->
+
+			<nav class="lnb">
+			<!-- lnb=local navigation bar -->
+				<h2>메뉴 1</h2>
+				<ul>
+					<li><a href="#">메뉴 1-1</a></li>
+					<li><a href="#">메뉴 1-2</a></li>
+					<li><a href="#">메뉴 1-3</a></li>
+				</ul>
+			</nav>
+
+			<aside class="aside">
+				<h2>바로가기</h2>
+				<ul>
+					<li><a href="#">참고링크1</a></li>
+					<li><a href="#">참고링크2</a></li>
+					<li><a href="#">참고링크3</a></li>
+				</ul>
+			</aside>
+		</div>
+	
+
+		<footer class="footer"> 
+			<p>copyright &copy; F.E. Camp.  All rights reserved. </p>
+			<!-- &와 ;로 닫힌 구간은 html entity로서, 특수문자를 표현한다. -->
+		</footer>
+		<p>...</p>
+		<p title="world wide web consortium" lang="en">W3C</p>
+		<p style="background:yellow;text-decoration:underline">Hello, World!</p>
+		<!-- 이렇게 p태그 안에 직접 css를 코딩하는 것을 inline으로 작성한다고 한다. -->
+		<!-- css에서의 속성은 영어로 property, 값은 value -->
+
+
+	</div>
+
+</body>
 </html>
