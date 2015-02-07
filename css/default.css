@@ -1,4 +1,8 @@
+@charset "utf-8" ;
+
+
 p{background: blue}
+
 #container{
 	/*아이디를 선택할 경우, 앞에 샵을 붙여야 한다.*/
 	max-width: 960px;
