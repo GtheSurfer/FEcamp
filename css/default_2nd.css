@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* html reset */
+header, 
+footer, 
+section, 
+article, 
+nav, 
+aside, 
+main,
+figure,
+figcaption{
+	display: block;
+}
+html,
+body{
+	min-height: 100%;
+}
+body{
+	margin: 0;
+}
+
+/* All */
+body{
+	background: -webkit-linear-gradient(#ccc,#fff); 
+	background: -moz-linear-gradient(#ccc,#fff); 
+	background: -ms-linear-gradient(#ccc,#fff); 
+	background: -o-linear-gradient(#ccc,#fff); 
+	background: linear-gradient(#ccc,#fff); 
+}
+.header>h1{
+	font-size: 28px;
+	text-shadow:1px 1px 0 #fff;
+}
+
+.search>input{
+	vertical-align: top;
+	border-radius: 3px;
+}
+.search>[type="search"]{
+	border: 1px solid #ccc;
+	height: 32px;
+	width: 160px;
+	box-shadow: 0 0 4px #ccc inset;
+}
+.search>[type="submit"]{
+	width: 50px;
+	height: 32px;
+	background: #fff;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 4px #aaa;
+}
+main{
+	background: #fff;
+	box-shadow: 0 0 4px #999;
+	box-shadow: 0 0 4px rgba(0,0,0,.3);
+	/* box-shadow를 두 번 쓴 이유: 위의 것은 IE7,8에서 인식하는 코드. 아래것은 못한다. 
+	그러므로, 저렇게 두 줄을 쓰면, IE7,8은 위의 것만 해석하고 아랫줄은 버리며, 다른 브라우저들은 아랫줄로 윗줄을 override한다. */
+	/* rgba의 최대값은 255, alpha는 1 */
+	/* css에서는 소수점 앞의 0은 생략할 수 있다. */
+	border-radius: 8px;
+	min-height: 300px;
+	/* height를 쓰면 컨텐츠가 넘쳐도 늘어나지 않는다. */
+}
+
+.lnb{
+	text-shadow: 1px 1px 0 #000;
+}
+
+.lnb h2{
+	background: #666;
+	border-radius: 4px 4px 0 0;
+	font-size: 14px;
+	color: #fff;
+	padding: 0 10px;
+	height: 32px;
+	line-height: 34px;
+	margin: 0;
+}
+
+.lnb ul{
+	margin: 0;
+	padding: 0;
+	/* 네 방향이 모두 0이므로, 한 번만 0이라고 적어주면 된다. */
+	list-style: none;
+}
+.lnb a{
+	display: block;
+	background: #777;
+	padding: 0 10px;
+	line-height: 32px;
+	/* 탭할 수 있는 최소의 크기를 32px로 권장하고 있다. */
+	text-decoration: none;
+	color: #fff;
+	transition: .2s;
+}
+.lnb li:last-child>a{
+	border-radius: 0 0 4px 4px;
+}
+.lnb a:hover,
+.lnb a:focus{
+	background: #555;
+}
+	/* focus는 키보드로 움직일 때를 위한 것이다. */
+
+/* Mobile */
+
+
+/* Tablet & Desktop */
+@media (min-width:768px){
+	
+}
+
+/* Tablet */
+@media (min-width:768px) and (max-width:1024px){
+	
+}
+
+/* Desktop */
+@media (min-width:1025px){
+	
+}

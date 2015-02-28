@@ -23,5 +23,7 @@ p{background: blue}
 
 .header>h1{
 	/*헤더 밑에 있는 h1을 선택한 경우이다*/
-
+	color : green;
+	font-style : italic;
+	
 }

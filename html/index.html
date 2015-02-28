@@ -2,21 +2,24 @@
 <html lang="ko">
 <head>
 	<meta charset="utf-8" />
+	<!-- 문법을 닫을 때, HTML4.01는 >로 닫지만, XHTML의 경우는 />로 닫았었다. HTML5는 둘다 허용한다. -->
 	<meta name="viewport" content="width=device-width" />
+	<!-- 모바일에서 화면에 페이지 전체를 억지로 구겨넣는 일이 없도록 방지하는, 모바일 전용 코드 -->
 	<!-- <meta name="viewport" content="width=device-width,initial-scale=2, minimum-scale=1, maximum-scale=2, user-scalable=no" /> -->
 	<!-- minimum-scale의 기본값은 0.5 -->
 	<!-- maximum-scale의 기본값은 2 -->
-	<title> 신문고 이용안내 - 공지사항 - 청와대</title>
+	<title> 구지봉 - F.E. Camp - Fast Campus</title>
 	<!-- 타이틀을 적을 때엔, 하위페이지를 앞쪽에 적어줘야, 탭이 작아져도 보인다. 시각장애인에게도 좋다. -->
 	<link rel="stylesheet" href="../css/default.css">
 	<!-- rel=relation, href=hyper-text reference -->
 	<!-- ..은 부모 디렉토리이다. -->
 
 	<style>
-		p{background:red;}
+		p{background:green;}
 		/*이렇게 헤드에 적는 것은 embeded로 적는다고 한다. inline과 반대 개념*/
 		/*여기서 p는 선택자(selector)라고 부름.*/
 		/*style태그는 head태그에만 작성하는 것이 원칙이다. body에 적어도 브라우저가 용인하는 경우도 있긴하다.*/
+		/* inline > embeded > external의 순으로 우선처리해 준다. 그래서 이 문서에 따르면, p태그를 쓴 main과 footer만 바탕색이 그린이 된다.*/
 
 	</style>
 
@@ -24,6 +27,7 @@
 
 <body>
 	<div class="container">
+	<!-- 페이지의 폭을 제한하기 위하여 div로 감싼다. 폭은 css로 설 -->
 	<!-- id는 한 페이지에서 한 번만 나올 수 있다. id의 값은 숫자로 시작하면 안된다. 한글은 가능 -->
 	<!-- id는 URL으로 사용할 수도 있다. 해당영역을 최상단으로 정렬하여 보여준다. -->
 	<a href="#main">skip menu</a>
@@ -31,7 +35,7 @@
 
 		<header class="header">
 			<h1>HTML5</h1>
-			<nav class="gnb">.gnb
+			<nav class="gnb">
 				<h2>메인 메뉴</h2>
 				<ul>
 					<li><a href="#">메뉴1</a>
@@ -66,15 +70,25 @@
 				<!-- input의 속성/값을 생략하면, 기본적으로 type="text"와 같은 효과가 난다. -->
 				<!-- requried 속성은, 폼을 작성해야만 써브밋이 가능하게한다. 공란인채로 검색버튼을 누를 수 없다는 소리. -->
 				<input type="submit" value="search">
+				<!-- 서브밑 버튼을 만들고, 그 안의 텍스트 내용을 search로 표기한다. -->
 
 			</form>
 		</header>
 
 		<div class="body">
-		<!-- 이 디비전은 래퍼로써, 세개의 칼럼(박스)들을 하나로 묶어주는, 권장사항이다. -->
+		<!-- 이 디비전은 wrapper로써, 세개의 칼럼(박스)들을 하나로 묶어주는, 권장사항이다. -->
 			<main id="main">
 			<!-- URL로 사용하기 위하여 아이디를 부여하였다. -->
-			#main
+			<p>
+			#main#main#main#main#main#main#main#main#main#main<br>
+			#main#main#main#main#main#main#main#main#main#main<br>
+			#main#main#main#main#main#main#main#main#main#main<br>
+			#main#main#main#main#main#main#main#main#main#main<br>
+			#main#main#main#main#main#main#main#main#main#main<br>
+			#main#main#main#main#main#main#main#main#main#main<br>
+			#main#main#main#main#main#main#main#main#main#main<br>
+			#main#main#main#main#main#main#main#main#main#main<br>
+			</p>		
 			</main>
 			<!-- 메인 엘리먼트 안에는, 다른페이지에 반복되지 않는 것이 들어가야 한다. -->
 			<!-- 한페이지에서 한번만 사용할 수 있다. -->
@@ -104,9 +118,13 @@
 			<p>copyright &copy; F.E. Camp.  All rights reserved. </p>
 			<!-- &와 ;로 닫힌 구간은 html entity로서, 특수문자를 표현한다. -->
 		</footer>
+		
+		<!-- 다음은 강의 첫시간에 코딩한 것으로, 더이상 필요 없어 주석처리한다. -->
+		<!-- 
 		<p>...</p>
 		<p title="world wide web consortium" lang="en">W3C</p>
-		<p style="background:yellow;text-decoration:underline">Hello, World!</p>
+		<p style="background:yellow;text-decoration:underline">Hello, World!</p> 
+		-->
 		<!-- 이렇게 p태그 안에 직접 css를 코딩하는 것을 inline으로 작성한다고 한다. -->
 		<!-- css에서의 속성은 영어로 property, 값은 value -->
 
