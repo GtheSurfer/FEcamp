@@ -38,6 +38,23 @@ body{
 }
 .header>h1{
 	font-size: 28px;
+	text-shadow:1px 1px 0 #fff;
+}
+.search>input{
+	vertical-align: top;
+	border-radius: 3px;
+}
+
+/* All */
+body{
+	background: -webkit-linear-gradient(#ccc,#fff); 
+	background: -moz-linear-gradient(#ccc,#fff); 
+	background: -ms-linear-gradient(#ccc,#fff); 
+	background: -o-linear-gradient(#ccc,#fff); 
+	background: linear-gradient(#ccc,#fff); 
+}
+.header>h1{
+	font-size: 28px;
 	text-shadow: 1px 1px 0 #fff;
 }
 .search>input{
@@ -66,6 +83,8 @@ main{
 	background: #fff;
 	box-shadow: 0 0 4px #999;
 	box-shadow: 0 0 4px rgba(0,0,0,.3);
+	border-radius: 8px;
+	min-height: 300px;
 	/* box-shadow를 두 번 쓴 이유: 위의 것은 IE7,8에서 인식하는 코드. 아래것은 못한다. 
 	그러므로, 저렇게 두 줄을 쓰면, IE7,8은 위의 것만 해석하고 아랫줄은 버리며, 다른 브라우저들은 아랫줄로 윗줄을 override한다. */
 	/* rgba의 최대값은 255, alpha는 1 */
@@ -93,7 +112,6 @@ main{
 	line-height: 32px;
 	margin: 0;
 }
-
 .lnb li{
 	margin: 1px 0;
 }
@@ -118,6 +136,12 @@ main{
 .lnb a:hover,
 .lnb a:focus{
 	background: #555;
+}
+.aside{
+	border:1px solid #ddd;
+	border-radius: 4px;
+	padding: 0 10px;
+	background: #fff;
 	/* focus는 키보드로 움직일 때를 위한 것이다. */
 }
 .lnb a:active{
@@ -246,6 +270,99 @@ main{
 	}
 	.gnb{
 		margin-bottom: 15px;
+		position: relative;
+		/*서브메뉴를 좌측정렬시키고 싶은데, gnb를 기준으로 위치를 정하게 하기 위해 relative를 넣는다.*/
+	}
+	.gnb>ul{
+		display: block !important;
+		height: 40px;
+		border-bottom: 40px solid #fff;
+		padding: 0 0 0 25px;
+		overflow: visible;
+		background: -webkit-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+		background: -moz-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+		background: -ms-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+		background: -o-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
+		background: linear-gradient(to bottom, #555 0%, #333 50%, #000 50%, #222 100%);
+	}
+	.gnb ul ul{
+		display: none;
+	}
+	.gnb>ul>li{
+		float: left;
+	}
+	.gnb a{
+		background: none !important;
+	}
+	.gnb>ul>li>a{
+		line-height: 40px;
+		padding: 0 25px;
+	}
+	.gnb>ul>.active>a{
+		background: #fff !important;
+		color: #000;
+		font-weight: 700;
+		margin-top: 4px;
+		line-height: 36px;
+		border-radius: 4px 4px 0 0;
+	}
+	.gnb>ul>li.active>ul{
+		display: block;
+		left: 20px;
+		/*서브메뉴를 좌측으로 정렬시키기 위해 left를 쓴다.*/
+	}
+	.gnb ul ul{
+		position: absolute;
+	}
+	.gnb li li{
+		border: 0;
+		display: inline-block;
+	}
+	.gnb li li>a{
+		color: #666;
+		line-height: 40px;
+	}
+	.body:after{
+		/*after는 body가 끝나기 전의 마지막 자식 요소를 선택하는 가상요소 선택자*/
+		content:"";
+		display: block;
+		clear: both;
+	}
+}
+
+/* Tablet */
+@media (min-width:768px) and (max-width:1024px){
+	.body{
+		padding-right: 200px;
+	}
+	main{
+		float: left;
+		width: 100%;
+		margin-right: -180px;
+	}
+	.lnb,
+	.aside{
+		float: right;
+		box-sizing: border-box;
+		width: 180px;
+		position: relative;
+		left: 200px;
+	}
+
+/* Tablet & Desktop */
+@media (min-width:768px){
+	.gnb>button{
+		display: none;
+	}
+	.search{
+		position: absolute;
+		top: 20px;
+		right: 10px;
+		margin: 0;
+		width: 200px;
+	}
+	.gnb{
+		margin-bottom: 15px;
 	}
 	.gnb>ul{
 		display: block !important;
@@ -299,9 +416,38 @@ main{
 /* Tablet */
 @media (min-width:768px) and (max-width:1024px){
 	
-}
-
 /* Desktop */
 @media (min-width:1025px){
-	
-}
+<<<<<<< HEAD
+	.body{
+		padding: 0 200px 0 220px;
+	}
+	main{
+		float: left;
+		width: 100%;
+		margin-right: -100%;
+	}
+	.lnb{
+		float: left;
+		width: 200px;
+		position: relative;
+		right: 220px;
+	}
+	.aside{
+		float: right;
+		width: 158px;
+		position: relative;
+		left: 200px;
+		/*aside는 패딩이 20, 보더가 2 들어가 있으므로, 총 180px을 만드려면 158px이라고 적어야 함.*/
+	}
+	.container{
+		max-width: 1280px;
+		margin: 0 auto;
+		position: relative;
+		padding: 0 10px;
+	}
+	.search{
+		top: 0;
+		right: 10;
+		/*.container의 padding이 10px이므로, position: absolute상태인 .search도 오른쪽을 10px띄워야 한다.*/
+	}
