@@ -2,37 +2,19 @@
 <html lang="ko">
 <head>
 	<meta charset="utf-8">
-	<!-- 문법을 닫을 때, HTML4.01는 >로 닫지만, XHTML의 경우는 />로 닫았었다. HTML5는 둘다 허용한다. -->
 	<meta name="viewport" content="width=device-width">
-	<!-- 모바일에서 화면에 페이지 전체를 억지로 구겨넣는 일이 없도록 방지하는, 모바일 전용 코드 -->
-	<!-- <meta name="viewport" content="width=device-width,initial-scale=2, minimum-scale=1, maximum-scale=2, user-scalable=no" /> -->
-	<!-- minimum-scale의 기본값은 0.5 maximum-scale의 기본값은 2 -->
-	<title>수업</title>
-	<!-- 타이틀을 적을 때엔, 하위페이지를 앞쪽에 적어줘야, 탭이 작아져도 보인다. 시각장애인에게도 좋다. -->
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2,user-scalable=no"> -->
+	<title>HTML5</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="default.css">
-	<!-- rel=relation, href=hyper-text reference -->
-	<!-- ..은 부모 디렉토리이다. -->
 	<!--[if lt IE 9]>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
-	<!-- IE 7,8브라우저가 못 읽는 것들을 위해서 넣은 자바스크립트이다. 표준이 아닌 코드로, IE9보다 낮은 버전의 브라우저에서만 작동하도록 명령하였다. -->
-	<!--
-	<style>
-			p{background:green;}
-			/*이렇게 헤드에 적는 것은 embeded로 적는다고 한다. inline과 반대 개념*/
-			/*여기서 p는 선택자(selector)라고 부름.*/
-			/*style태그는 head태그에만 작성하는 것이 원칙이다. body에 적어도 브라우저가 용인하는 경우도 있긴하다.*/
-			/* inline > embeded > external의 순으로 우선처리해 준다. 그래서 이 문서에 따르면, p태그를 쓴 main과 footer만 바탕색이 그린이 된다.*/
-	-->
 </head>
 <body>
-	<div class="container">
-	<!-- 페이지의 폭을 제한하기 위하여 div로 감싼다. 폭은 css로 설 -->
-	<!-- id는 한 페이지에서 한 번만 나올 수 있다. id의 값은 숫자로 시작하면 안된다. 한글은 가능 -->
-	<!-- id는 URL으로 사용할 수도 있다. 해당영역을 최상단으로 정렬하여 보여준다. -->
+	<div class="ctnr">
 		<a href="#main" class="skip">메뉴건너뛰기</a>
-		<!-- URL대신에, 메인이라는 아이디를 적어주었다. -->
 		<header class="header">
 			<h1>HTML5</h1>
 			<nav class="gnb">
@@ -64,22 +46,17 @@
 						</ul>
 					</li>
 				</ul>
-				<!-- ul과 li사이에는 다른 어떤 태그도 끼어들면 안된다. -->
 			</nav>
 			<form class="search">
 				<input type="search" required>
-				<!-- input의 속성/값을 생략하면, 기본적으로 type="text"와 같은 효과가 난다. -->
-				<!-- requried 속성은, 폼을 작성해야만 써브밋이 가능하게한다. 공란인채로 검색버튼을 누를 수 없다는 소리. -->
 				<input type="submit" value="검색">
-				<!-- 서브밑 버튼을 만들고, 그 안의 텍스트 내용을 search로 표기한다. -->
 			</form>
 		</header>
 		<div class="body">
-		<!-- 이 디비전은 wrapper로써, 세개의 칼럼(박스)들을 하나로 묶어주는, 권장사항이다. -->
 			<main id="main">
-			<!-- URL로 사용하기 위하여 아이디를 부여하였다. -->
 				<article>
 					<img hidden src="http://dummyimage.com/1024x100/000000/fff" width="1024" height="100" alt>
+<<<<<<< Updated upstream
 +					<!-- "Video For Everybody" http://camendesign.com/code/video_for_everybody -->
 +					<video hidden controls="controls" poster="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="640" height="360">
 +						<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4" />
@@ -100,10 +77,137 @@
 +						<iframe width="560" height="315" src="https://www.youtube.com/embed/hfXZ6ydgZyo" frameborder="0" allowfullscreen></iframe>
 +					</div>
 				</article>
+=======
+					<!-- "Video For Everybody" http://camendesign.com/code/video_for_everybody -->
+					<video hidden controls="controls" poster="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="640" height="360">
+						<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4" />
+						<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm" />
+						<source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogg" />
+						<object type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" width="640" height="360">
+							<param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+							<param name="allowFullScreen" value="true" />
+							<param name="wmode" value="transparent" />
+							<param name="flashVars" value="config={'playlist':['http%3A%2F%2Fsandbox.thewikies.com%2Fvfe-generator%2Fimages%2Fbig-buck-bunny_poster.jpg',{'url':'http%3A%2F%2Fclips.vorwaerts-gmbh.de%2Fbig_buck_bunny.mp4','autoPlay':false}]}" />
+							<img alt="Big Buck Bunny" src="http://sandbox.thewikies.com/vfe-generator/images/big-buck-bunny_poster.jpg" width="640" height="360" title="No video playback capabilities, please download the video below" />
+						</object>
+					</video>
+					<p hidden>
+						<strong>Download video:</strong> <a href="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4">MP4 format</a> | <a href="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv">Ogg format</a> | <a href="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm">WebM format</a>
+					</p>
+					<div hidden class="vframe">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/hfXZ6ydgZyo" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div hidden class="table-rwd">
+				      <table class="table">
+				        <thead>
+				          <tr>
+				            <th>#</th>
+				            <th>Table heading</th>
+				            <th>Table heading</th>
+				            <th>Table heading</th>
+				            <th>Table heading</th>
+				            <th>Table heading</th>
+				            <th>Table heading</th>
+				          </tr>
+				        </thead>
+				        <tbody>
+				          <tr>
+				            <th scope="row">1</th>
+				            <td>Table cell Table cell Table cell Table cell Table cell Table cell Table cell Table cell Table cell Table cell </td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				          </tr>
+				          <tr>
+				            <th scope="row">2</th>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				          </tr>
+				          <tr>
+				            <th scope="row">3</th>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				            <td>Table cell</td>
+				          </tr>
+				        </tbody>
+				      </table>
+				    </div>
+				    <h1 hidden>나눔고딕 테스트</h1>
+				    <p hidden>동해물과 백두산이 마르고 닳도록</p>
+				    <form class="sign-up">
+				    	<fieldset>
+				    		<legend>회원 가입(필수)</legend>
+				    		<div class="form-group">
+					    		<label for="email">이메일</label>
+					    		<input type="email" class="form-control" id="email" required placeholder="abc@abc.com">
+				    		</div>
+				    		<div class="form-group">
+					    		<label for="pw1">비밀번호</label>
+					    		<input type="password" class="form-control" id="pw1" required placeholder="영문 대소문자와 숫자를 사용하여 6자리 이상 작성">
+				    		</div>
+				    		<div class="form-group">
+					    		<label for="pw2">비밀번호 확인</label>
+					    		<input type="password" class="form-control" id="pw2" required placeholder="영문 대소문자와 숫자를 사용하여 6자리 이상 작성">
+				    		</div>
+				    	</fieldset>
+				    	<fieldset>
+				    		<legend>추가 입력 사항(옵션)</legend>
+				    		<dl>
+				    			<dt>성별</dt>
+				    			<dd>
+				    				<input type="radio" id="male" name="gender">
+				    				<label for="male">남성</label>
+				    				<input type="radio" id="female" name="gender">
+				    				<label for="female">여성</label>
+				    			</dd>
+				    			<dt>취미</dt>
+				    			<dd>
+				    				<input type="checkbox" id="mtb">
+				    				<label for="mtb">산악자전거</label>
+				    				<input type="checkbox" id="football">
+				    				<label for="football">축구</label>
+				    				<input type="checkbox" id="motorcycle">
+				    				<label for="motorcycle">모터사이클</label>
+				    			</dd>
+				    		</dl>
+				    	</fieldset>
+				    	<button type="submit">확인</button>
+				    </form>
+				    <!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+					  Launch demo modal
+					</button>
+>>>>>>> Stashed changes
 
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					  <div class="modal-dialog">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					      </div>
+					      <div class="modal-body">
+					        ...
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        <button type="button" class="btn btn-primary">Save changes</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</article>
 			</main>
-			<!-- 메인 엘리먼트 안에는, 다른페이지에 반복되지 않는 것이 들어가야 한다. -->
-			<!-- 한페이지에서 한번만 사용할 수 있다. -->
 			<nav class="lnb">
 				<h2>메뉴 1</h2>
 				<ul>
@@ -123,11 +227,10 @@
 		</div>
 		<footer class="footer">
 			<p>Copyright &copy; FE.CAMP. All rights reserved.</p>
-			<!-- &와 ;로 닫힌 구간은 html entity로서, 특수문자를 표현한다. -->
 		</footer>
 	</div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="default.js"></script>
-<!-- 브라우저의 퍼포먼스를 향상 시키기 위하여, 꼭 초반에 읽어와야하는 Java Script만 head에 넣고, 그렇지 않은 것은 항상 body의 마지막에 넣도록 한다. -->
 </body>
 </html>

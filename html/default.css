@@ -26,6 +26,7 @@ input,
 textarea,
 select{
 	font-size: 14px;
+	font-family: sans-serif;
 }
 img,
 video{
@@ -46,6 +47,16 @@ video{
 }
 
 /* All */
+@font-face {
+  font-family: NG;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+  src: url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+       url(https://fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+}
 body{
 	background: -webkit-linear-gradient(#ccc,#fff); 
 	background: -moz-linear-gradient(#ccc,#fff); 
@@ -58,12 +69,15 @@ main>article{
 }
 .header>h1{
 	font-size: 28px;
-	text-shadow: 1px 1px 0 #fff;
+	text-shadow:1px 1px 0 #fff;
+}
+.gnb *{
+	box-sizing:content-box;
 }
 
 .search>input{
 	vertical-align: top;
-	border-radius: 10px;
+	border-radius: 3px;
 }
 .search>[type="search"]{
 	border: 1px solid #ccc;
@@ -89,19 +103,14 @@ main{
 	box-shadow: 0 0 4px rgba(0,0,0,.3);
 	border-radius: 8px;
 	min-height: 300px;
-	/* box-shadow를 두 번 쓴 이유: 위의 것은 IE7,8에서 인식하는 코드. 아래것은 못한다. 
-	그러므로, 저렇게 두 줄을 쓰면, IE7,8은 위의 것만 해석하고 아랫줄은 버리며, 다른 브라우저들은 아랫줄로 윗줄을 override한다. */
-	/* rgba의 최대값은 255, alpha는 1 */
-	/* css에서는 소수점 앞의 0은 생략할 수 있다. */
-	border-radius: 8px;
-	min-height: 300px;
-	/* height를 쓰면 컨텐츠가 넘쳐도 늘어나지 않는다. */
+}
+main>article{
+	padding: 15px;
 }
 .lnb ul,
 .aside ul{
 	margin: 0;
 	padding: 0;
-	/* 네 방향이 모두 0이므로, 한 번만 0이라고 적어주면 된다. */
 	list-style: none;
 }
 .lnb{
@@ -116,6 +125,7 @@ main{
 	line-height: 32px;
 	margin: 0;
 }
+
 .lnb li{
 	margin: 1px 0;
 }
@@ -125,7 +135,6 @@ main{
 	padding: 0 10px;
 	height: 32px;
 	line-height: 34px;
-	/* 탭할 수 있는 최소의 크기를 32px로 권장하고 있다. */
 	text-decoration: none;
 	color: #fff;
 	-webkit-transition:.2s;
@@ -146,15 +155,7 @@ main{
 	border-radius: 4px;
 	padding: 0 10px;
 	background: #fff;
-	/* focus는 키보드로 움직일 때를 위한 것이다. */
-}
-.lnb a:active{
-	background: red;
-}
-.aside{
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	padding: 0 10px;
+	box-sizing:content-box;
 }
 .aside h2{
 	font-size: 14px;
@@ -176,9 +177,35 @@ main{
 	text-align: center;
 	color: #959595;
 }
+.table-rwd{
+	overflow: auto;
+}
+.table{
+	border-collapse: collapse;
+}
+.table th,
+.table td{
+	border-bottom: 1px solid #ddd;
+	padding: 5px;
+}
+.table thead th{
+	background: #eee;
+	border-top: 2px solid #bbb;
+}
+.table td{
+	vertical-align: top;
+	width: 14%;
+}
+.sign-up dt{
+	font-weight: bold;
+	font-size: 16px;
+}
+.sign-up input+label{
+	margin-right: 20px;
+}
 
 /* Mobile */
-.container{
+.ctnr{
 	margin: 0 10px;
 }
 .skip{
@@ -189,6 +216,7 @@ main{
 	position: absolute;
 	overflow: hidden;
 	margin: 0;
+	opacity: 0;
 }
 .gnb>button{
 	border:0;
@@ -202,6 +230,7 @@ main{
 	cursor: pointer;
 	top: 15px;
 	right: 10px;
+	box-sizing:border-box;
 }
 .gnb>button:before{
 	content:"";
@@ -212,6 +241,7 @@ main{
 	height: 4px;
 	border-top: 12px double #fff;
 	border-bottom: 12px double #fff;
+	box-sizing:content-box;
 }
 .gnb>ul{
 	background: #666;
@@ -234,6 +264,7 @@ main{
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+
 }
 .gnb>ul>li>a{
 	background: #444;
@@ -262,6 +293,13 @@ main{
 
 /* Tablet & Desktop */
 @media (min-width:768px){
+	body,
+	table,
+	input,
+	textarea,
+	button{
+		font-family: NG, sans-serif;
+	}
 	.gnb>button{
 		display: none;
 	}
@@ -275,7 +313,6 @@ main{
 	.gnb{
 		margin-bottom: 15px;
 		position: relative;
-		/*서브메뉴를 좌측정렬시키고 싶은데, gnb를 기준으로 위치를 정하게 하기 위해 relative를 넣는다.*/
 	}
 	.gnb>ul{
 		display: block !important;
@@ -313,7 +350,6 @@ main{
 	.gnb>ul>li.active>ul{
 		display: block;
 		left: 20px;
-		/*서브메뉴를 좌측으로 정렬시키기 위해 left를 쓴다.*/
 	}
 	.gnb ul ul{
 		position: absolute;
@@ -327,7 +363,6 @@ main{
 		line-height: 40px;
 	}
 	.body:after{
-		/*after는 body가 끝나기 전의 마지막 자식 요소를 선택하는 가상요소 선택자*/
 		content:"";
 		display: block;
 		clear: both;
@@ -347,82 +382,15 @@ main{
 	.lnb,
 	.aside{
 		float: right;
-		box-sizing: border-box;
+		box-sizing:border-box;
 		width: 180px;
 		position: relative;
 		left: 200px;
 	}
-
-/* Tablet & Desktop */
-@media (min-width:768px){
-	.gnb>button{
-		display: none;
-	}
-	.search{
-		position: absolute;
-		top: 20px;
-		right: 10px;
-		margin: 0;
-		width: 200px;
-	}
-	.gnb{
-		margin-bottom: 15px;
-	}
-	.gnb>ul{
-		display: block !important;
-		height: 40px;
-		border-bottom: 40px solid #fff;
-		padding: 0 0 0 25px;
-		overflow: visible;
-		background: -webkit-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
-		background: -moz-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
-		background: -ms-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
-		background: -o-linear-gradient(#555 0%, #333 50%, #000 50%, #222 100%);
-		background: linear-gradient(to bottom, #555 0%, #333 50%, #000 50%, #222 100%);
-	}
-	.gnb ul ul{
-		display: none;
-	}
-	.gnb>ul>li{
-		float: left;
-	}
-	.gnb a{
-		background: none !important;
-	}
-	.gnb>ul>li>a{
-		line-height: 40px;
-		padding: 0 25px;
-	}
-	.gnb>ul>.active>a{
-		background: #fff !important;
-		color: #000;
-		font-weight: 700;
-		margin-top: 4px;
-		line-height: 36px;
-		border-radius: 4px 4px 0 0;
-	}
-	.gnb>ul>li.active>ul{
-		display: block;
-	}
-	.gnb ul ul{
-		position: absolute;
-	}
-	.gnb li li{
-		border: 0;
-		display: inline-block;
-	}
-	.gnb li li>a{
-		color: #666;
-		line-height: 40px;
-	}
 }
 
-/* Tablet */
-@media (min-width:768px) and (max-width:1024px){
-	
 /* Desktop */
 @media (min-width:1025px){
-<<<<<<< HEAD
 	.body{
 		padding: 0 200px 0 220px;
 	}
@@ -431,20 +399,21 @@ main{
 		width: 100%;
 		margin-right: -100%;
 	}
+	.lnb,
+	.aside{
+		position: relative;
+	}
 	.lnb{
 		float: left;
 		width: 200px;
-		position: relative;
 		right: 220px;
 	}
 	.aside{
 		float: right;
 		width: 158px;
-		position: relative;
 		left: 200px;
-		/*aside는 패딩이 20, 보더가 2 들어가 있으므로, 총 180px을 만드려면 158px이라고 적어야 함.*/
 	}
-	.container{
+	.ctnr{
 		max-width: 1280px;
 		margin: 0 auto;
 		position: relative;
@@ -452,6 +421,6 @@ main{
 	}
 	.search{
 		top: 0;
-		right: 10;
-		/*.container의 padding이 10px이므로, position: absolute상태인 .search도 오른쪽을 10px띄워야 한다.*/
+		right: 10px;
 	}
+}
