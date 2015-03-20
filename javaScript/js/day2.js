@@ -51,14 +51,14 @@ function 더하기(num1,num2){
 }
 var num = 더하기(3,5);
 console.log(num);
-
+console.log(더하기(5,9));
 
 
 function 제곱 (num){
-    return (num*num);
+    return num*num;
 }
 var result = 제곱(4);
-console.log(result);
+console.log(제곱(7));
 
 
 var fn = function (n) {
@@ -85,20 +85,23 @@ function 함수() {
 
 
 var car = {
-    color : 'silver',
+    color : function() {
+            console.log('silver')
+            },   
     start : function() {
             console.log('부릉');
             }
 };
 car.start();
+car.color();
 
 var str = '동해물과 백두산이 마르고 닳도록 백두산이';
 console.log(str.length);
 console.log(str.indexOf('싫어'));
 console.log(str.lastIndexOf('백두산'));
 
-var 새문자열 = str.substr(0,7);
-console.log(새문자열);
+//var 새문자열 = str.substr(0,7);
+console.log(str.substr(0,9));
 
 var 잘라내기 = str.substr(5);
 console.log(잘라내기);
@@ -113,7 +116,7 @@ var fruits = ['Apple','Banana',"Cherry"];
 fruits.push('Mango','Melon','Berry','Peach');
 
 
-console.log(fruits.join());
+console.log(fruits.join('fucks'));
 
 
 
@@ -133,3 +136,12 @@ function arrayEnd(배열){
     return 배열[배열.length-1];
 }
 console.log(arrayEnd(fruits));
+
+
+
+function 중간녀석(배열){
+    var middle = (배열.length-1)/2
+    return 배열[middle];
+}
+console.log(중간녀석(fruits));
+console.log(fruits.length);

@@ -40,7 +40,7 @@ var str1 = 'Hello', str2 = 'World', str3;
 // 자바스크립트에서는 어떤 값이든 문자열로 변환이 된다.
 // console.log( str1 + ',' + str2 + str3 ); // undefined
 //console.log( str1 + num1 );
-var 삼백 = 'a300';
+var 삼백 = '300';
 //console.log( 삼백 + num1 );
 
 // parseInt는 문자열 타입을 숫자 타입으로 변환.
@@ -66,4 +66,16 @@ console.log(typeof false); // "boolean"
 var 언디파인드;
 console.log(typeof 언디파인드); // "undefined"
 console.log(typeof undefined); // "undefined"
+
+//동영상보면서 여기서부터 혼자 끄적거림.
+console.log(typeof fruits);
+console.log(숫자삼백+'');
+console.log('나이:'+10+2);
+console.log('나이:'+(10+2));
+
+
+
+
+
+
 
