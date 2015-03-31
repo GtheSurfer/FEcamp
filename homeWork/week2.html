@@ -32,9 +32,8 @@
 	// 사용예: randomFloat(5, 10); // 5.3 또는 6.7 또는 7.8 또는 9.5
         function randomFloat (a, b) {
             var rand = ( Math.random() * (b - a) ) + a ;
-            return rand.toFixed(1);
+            return (Math.round(rand*10))/10;
         };
-        console.log(randomFloat(5,10));
 	// 문제4: Date 객체를 전달하면 "2015년 3월 21일 토요일"과 같이 날짜 문자열을 반환하는
 	// formatDate() 함수를 작성하라.
 	// 사용예:
