@@ -20,7 +20,7 @@
     // 홀짝(arr);
     // console.log(arr); // ['홀수', '짝수', '짝수', '짝수', '홀수']
         function 홀짝 (arr) {
-            for ( i = 0; i < arr.length; i++ ) {
+            for ( var i = 0; i < arr.length; i++ ) {
                 if ( arr[i] % 2 === 1) {
                    arr[i] = '홀수';
                 } else {
@@ -59,7 +59,7 @@
             var arr = new Array ();
             var x = Math.min( a, b );
             var y = Math.max( a, b ); 
-            for ( i = x+1; i < y && i <= 2*x; i++ ) {
+            for ( var i = x + 1; i < y && i <= 2*x; i++ ) {
                 if ( i % 3 === 0 ){
                     arr.push(i);
                 }
@@ -74,7 +74,7 @@
 	// console.log(['사과','바나나', 5, 2].sum()); // 7
         Array.prototype.sum = function () {
             var result = new Number();
-            for ( i = 0 ; i < this.length ; i++ ) {
+            for ( var i = 0 ; i < this.length ; i++ ) {
                 if ( typeof this[i] === 'number'){
                     result += this[i];
                 }
