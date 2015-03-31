@@ -66,7 +66,7 @@
             var mins = Math.floor((secondsLeft-hours*60*60)/60);
             var secs = Math.floor(secondsLeft-(hours*60*60)-(mins*60));    
             log(hours+'시간 '+mins+'분 '+secs+'초');
-            setTimeout( function () { countDown () }, 1000);
+            setTimeout(function () { countDown(y, m, d, h); }, 1000);
         }
         countDown(2015, 3, 26, 22);
     </script>
