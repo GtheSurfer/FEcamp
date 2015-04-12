@@ -34,25 +34,48 @@
             var form = document.getElementById(id);
             return form.setAttribute('value', '성공!');
         }
+//        function 성공 (id){
+//            jQuery( function ($){
+//                 $(id).attr('value','성공!');  
+//            });
+//        }; 
+
+        
 	// 문제3: jQuery를 사용해 아이디가 box인 엘리먼트에 이벤트 리스너를 추가하라.
 	// 단, 상자는 그냥 클릭하면 오른쪽으로 10픽셀 이동하고 Alt 키를 누른채 클릭하면 왼쪽으로 10픽셀 이동해야 한다.
 	// 힌트1: 이벤트 객체의 altKey 프로퍼티를 사용하면 Alt 키가 눌렸는지 확인할 수 있습니다.
 	// 힌트2: 문자열을 숫자로 변환하는 과정이 필요할 것입니다.
-        jQuery (function ($) {
-            $('#box').on('click', function (event) {
-                var style = $('#box').attr('style');
-                var props = style.split(';');
-                var regex = /\d+/;
-                var value = regex.exec(props[2]);
-                
-                if ( event.altKey) {
-                    value = +value - 10;
-                } else {
-                    value = +value + 10;
-                }
-                style = $('#box').attr('style', props[0]+';'+props[1]+';'+'left:'+value+'px;'+props[3]+';'+props[4]+';'+props[5]);
-            });
-        })
+//        jQuery (function ($) {
+//            $('#box').on('click', function (event) {
+//                var style = $('#box').attr('style');
+//                var props = style.split(';');
+//                var regex = /\d+/;
+//                var value = regex.exec(props[2]);
+//                
+//                if ( event.altKey) {
+//                    value = +value - 10;
+//                } else {
+//                    value = +value + 10;
+//                }
+//                style = $('#box').attr('style', props[0]+';'+props[1]+';'+'left:'+value+'px;'+props[3]+';'+props[4]+';'+props[5]);
+//            });
+//        })
+        
+        jQuery ( function ($) {
+            $box = $('#box');
+            $box.on('click', function (event) {
+                var left = parseInt($box.css('left'));
+                switch (event.altKey) {
+                    case false:
+                        left = left + 10;        
+                    break;
+                    case true:
+                        left = left - 10;
+                    break;
+                };
+                $box.css('left', left);
+           }); 
+        });
 	</script>
 </head>
 <body>
