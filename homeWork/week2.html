@@ -40,11 +40,12 @@
 	// var date = new Date(1426863600000);
 	// console.log(formatDate(date)); // 출력 결과: 2015년 3월 21일 토요일
         function formatDate(date) {
-            var year = date.getFullYear();
-            var month = date.getMonth()+1;
-            var datedigit = date.getDate();
-            var day = '일월화수목금토'.substr(date.getDay(),1);
-            return year+'년 '+month+'월 '+datedigit+'일 '+day+'요일';
+            var year, month, dateDigit, day;
+                year = date.getFullYear();
+                month = date.getMonth() + 1;
+                dateDigit = date.getDate();
+                day = '일월화수목금토'.substr( date.getDay(), 1 );
+            return year+'년 '+month+'월 '+dateDigit + '일 '+day+'요일';
         };
 	// 문제5: 생일을 입력하면 살아온 날짜를 숫자로 반환하는 함수 lifeTime()을 작성하라.
 	// 태어난 날을 1일로 센다.

@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>자바스크립트 과제 5주차</title>
+	<style>
+        .stream {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 1006px;
+        }
+        .stream:after {
+            clear: both;
+        }
+        .stream li {
+            width: 314px;
+            float: left;
+            margin: 0 0 16px 16px;
+            border: 1px solid #d6d6d6;
+            position: relative;
+        }
+        .stream li a {
+            display: block;
+            text-decoration: none;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #fff;
+            cursor: pointer;
+        }
+        .stream li a:hover {
+            border: 1px solid #0085da;
+        }
+        .stream li a img {
+            display: block;
+            width: 292px;
+            height: 292px;
+        }
+        .stream li .title {
+            display: block;
+            color: #000;
+            margin-top: 10px;
+            font-size: 15px;
+        }
+        .stream li .price {
+            display: block;
+            color: #777;
+            font-size: 12px;
+        }
+	</style>
+	<script src="jquery-1.11.2.min.js"></script>
+	<script>jQuery.noConflict();</script>
+	<script>
+ // 답.
+        jQuery( function ($) {
+            var $stream = $('ul.stream'), $items = $stream.find('>li');
+            
+            $(window).on('scroll', function (event){
+                event.preventDefault();
+                
+                var passedH, leftH ;
+                    passedH = $(document).scrollTop();
+                    leftH = $(document).height() - (passedH + $(window).height());
+                
+                if ( leftH < 100 ) {
+                    $items.clone().appendTo($stream).hide().fadeIn(1000);
+                };      
+            });   
+        });
+        
+// 페이지가 뜨는 순간 창의 크기가 목록의 크기보다 커서 하단에 공백이 생길 경우, 자동으로 clone().appendTo()하고 시작하고 싶다.
+//        jQuery( function ($) {
+//            var $stream = $('ul.stream'), $items = $stream.find('>li');
+//
+//            var windowH, streamH;
+//                windowH = $(window).height();
+//                streamH = $stream.height();
+//
+//            if ( windowH > streamH ) {
+//                var i = 0;
+//                $items.clone().appendTo($stream).hide().fadeIn(1000);
+//                i += 1;
+//            }
+//
+//            $(window).on('scroll', function (event){
+//                event.preventDefault();
+//                
+//                var passedH, leftH;
+//                    location = $(document).scrollTop();
+//                    leftH = $(document).height() - ( passedH + windowH );
+//                if ( leftH < 100 ) {
+//                    $items.clone().appendTo($stream).hide().fadeIn(1000);
+//                };      
+//           });   
+//
+//        });
+	</script>
+</head>
+<body>
+	<h1>무한 스크롤</h1>
+	<p>웹 페이지를 스크롤하면 아래쪽에 계속 컨텐츠가 추가되는 무한 스크롤 스크립트를 작성하세요. 실제 사용예는 <a href="https://youtu.be/z6doeEVHb_I">Youtube 동영상</a>을 참고하세요.</p>
+	<ul class="stream">
+		<li>
+			<a href="#">
+				<img src="http://lorempixel.com/292/292/cats">
+				<strong class="title">아이템 #1</strong>
+				<em class="price">12,100원</em>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://lorempixel.com/292/292/people">
+				<strong class="title">아이템 #2</strong>
+				<em class="price">12,200원</em>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="https://placekitten.com/292/292">
+				<strong class="title">아이템 #3</strong>
+				<em class="price">12,300원</em>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://lorempixel.com/292/292/sports">
+				<strong class="title">아이템 #4</strong>
+				<em class="price">12,100원</em>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://lorempixel.com/292/292/city">
+				<strong class="title">아이템 #5</strong>
+				<em class="price">12,200원</em>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="http://lorempixel.com/292/292/food">
+				<strong class="title">아이템 #6</strong>
+				<em class="price">12,300원</em>
+			</a>
+		</li>
+        
+	</ul>
+</body>
+</html>
