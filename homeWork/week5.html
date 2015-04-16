@@ -52,53 +52,56 @@
 	<script>jQuery.noConflict();</script>
 	<script>
  // 답.
+//        jQuery( function ($) {
+//            var $stream = $('ul.stream'), $items = $stream.find('>li');
+//            
+//            $(window).on('scroll', function (event){
+//                event.preventDefault();
+//                
+//                var passedH, leftH ;
+//                    passedH = $(document).scrollTop();
+//                    leftH = $(document).height() - (passedH + $(window).height());
+//
+//                
+//                if ( leftH < 100 ) {
+//                    $items.clone().appendTo($stream).hide().fadeIn(1000);
+//                }; 
+//
+//            });   
+//        });
+        
+// 페이지가 뜨는 순간 창의 크기가 목록의 크기보다 커서 하단에 공백이 생길 경우, 자동으로 clone().appendTo()하고 시작하고 싶다.
         jQuery( function ($) {
-            var $stream = $('ul.stream'), $items = $stream.find('>li');
+            var $stream, $items, windowH;
+                $stream = $('ul.stream');
+                $items = $stream.find('>li');
+                windowH = $(window).height();
             
+            //페이지가 열리는 순간, 아래에 빈공간이 있으면 $ stream을 복사하여 채운다.
+            //방법1. 성공~
+//            $(window).ready(function (){  
+//                if ( windowH > $stream.height() ) {
+//                    $items.clone().appendTo($stream).hide().fadeIn(3000);
+//                };
+//            });
+            //방법2. trigger를 이용하는 것. 그런데 여기에 적으면 실행이 안 되고, 아래에 적어야 실행이 되네...
+            
+            
+            // 이후에 $items이 채워지는 작업은, 스크롤이 일어날 때 일어나야 한다.
             $(window).on('scroll', function (event){
                 event.preventDefault();
                 
                 var passedH, leftH ;
                     passedH = $(document).scrollTop();
-                    leftH = $(document).height() - (passedH + $(window).height());
-
+                    leftH = $(document).height() - ( passedH + windowH );
                 
                 if ( leftH < 100 ) {
                     $items.clone().appendTo($stream).hide().fadeIn(1000);
-                }; 
-
-            });   
+                };      
+           }); 
+            
+            $(window).trigger('scroll');
         });
-        
-// 페이지가 뜨는 순간 창의 크기가 목록의 크기보다 커서 하단에 공백이 생길 경우, 자동으로 clone().appendTo()하고 시작하고 싶다.
-//        jQuery( function ($) {
-//            var $stream = $('ul.stream'), $items = $stream.find('>li');
-//
-//            // 윈도우 전체에 $items를 채워넣는 작업은, 창이 떴을 때 한 번만 일어나야 한다.
-//            var windowH, streamH;
-//                windowH = $(window).height();
-//                streamH = $stream.height();
-//
-//            if ( windowH > streamH ) {
-//                for ( var i = streamH ; i >= windowH ;  ) {
-//                    $items.clone().appendTo($stream).hide().fadeIn(1000);  
-//                    streamH = $stream.height();
-//                }  
-//            }
-//            // 이후에 $items이 채워지는 작업은, 스크롤이 일어날 때 일어나야 한다.
-//            $(window).on('scroll', function (event){
-//                event.preventDefault();
-//                
-//                var passedH, leftH, windowHeight;
-//                    windowHeight = $(window).height();
-//                    passedH = $(document).scrollTop();
-//                    leftH = $(document).height() - ( passedH + windowHeight );
-//                
-//                if ( leftH < 100 ) {
-//                    $items.clone().appendTo($stream).hide().fadeIn(1000);
-//                };      
-//           });   
-//        });
 	</script>
 </head>
 <body>
